@@ -6,17 +6,17 @@ Trigger de Status PROBLEM abrem chamados no GLPI
 
 Trigger de Status OK fecham os chamados que contem a TriggerID gerada na abertura e estão com o status de "Processando (atribuído)"
 
-"Usage: 
+Usage: 
 ```sh
-./zabbix_glpi_ticket.sh <PROBLEM|OK> <PARAMETERS>"
+$ ./zabbix_glpi_ticket.sh <PROBLEM|OK> <PARAMETERS>"
 ```
 
 EX PROBLEM:
 ```sh
-$./zabbix_glpi_ticket.sh "PROBLEM" "TITLE" "DESCRIPTION" "CATEGORY" "TYPE CONNECTION: EX Printer" "ID ITEM"
+$ ./zabbix_glpi_ticket.sh "PROBLEM" "TITLE" "DESCRIPTION" "CATEGORY" "TYPE CONNECTION: EX Printer" "ID ITEM"
 ```
 
 EX OK:
 ```sh
-./zabbix_glpi_ticket.sh "OK" "TRIGGER ID" "SOLUTION"
+$ ./zabbix_glpi_ticket.sh "OK" "TRIGGER ID" "SOLUTION"
 ```
