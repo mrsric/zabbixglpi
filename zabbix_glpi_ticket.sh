@@ -6,7 +6,7 @@
 # Authentication
 username="glpi"
 password="glpiglpi"
-urlGlpi="http://estacao-del034:8080/glpi_homologacao91"
+urlGlpi="http://host/glpi"
 
 # Ticket Parameters (Problem)
 ticketTitle="$2"
