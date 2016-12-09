@@ -38,7 +38,7 @@ dishelp() {
                 echo "EX PROBLEM:"
 				echo $0' "PROBLEM" "TITLE" "DESCRIPTION" "CATEGORY" "TYPE CONNECTION: EX Printer" "ID ITEM"'
 				echo " "
-                echo "EX PROBLEM:"
+                echo "EX OK:"
 				echo $0' "OK" "TRIGGER ID" "SOLUTION"'
 				echo " "
                 exit 3
