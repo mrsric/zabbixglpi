@@ -33,14 +33,14 @@ dishelp() {
                 echo "*                      Create by Marcos Ricardo de Souza                             *"
                 echo "**************************************************************************************"
                 echo
-				echo "Usage: $0 <PROBLEM|OK> <PARAMETERS>"
-				echo " "
+		echo "Usage: $0 <PROBLEM|OK> <PARAMETERS>"
+		echo " "
                 echo "EX PROBLEM:"
-				echo $0' "PROBLEM" "TITLE" "DESCRIPTION" "CATEGORY" "TYPE CONNECTION: EX Printer" "ID ITEM"'
-				echo " "
+		echo $0' "PROBLEM" "TITLE" "DESCRIPTION" "CATEGORY" "TYPE CONNECTION: EX Printer" "ID ITEM"'
+		echo " "
                 echo "EX OK:"
-				echo $0' "OK" "TRIGGER ID" "SOLUTION"'
-				echo " "
+		echo $0' "OK" "TRIGGER ID" "SOLUTION"'
+		echo " "
                 exit 3
 }
 
