@@ -31,3 +31,7 @@ Ex. OK:
 ```sh
 $ ./zabbix_glpi_ticket.sh "OK" "TRIGGER ID" "SOLUTION"
 ```
+
+
+#### Referências:
+https://github.com/glpi-project/glpi/blob/master/apirest.md
