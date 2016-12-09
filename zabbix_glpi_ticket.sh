@@ -11,7 +11,7 @@ urlGlpi="http://host/glpi"
 # Ticket Parameters (Problem)
 ticketTitle="$2"
 ticketContent="$3"
-ticketCategory="$4" #143# - Impressora Corporativa-> Ressuprimento
+ticketCategory="$4" #ID Category of ticket
 ticketItemType="$5" #Printer# - Item Type 
 ticketItemID="$6"
 ticketDate=`date +"%Y-%m-%d %R:%S"`
@@ -30,7 +30,7 @@ login_url="$site_url/initSession"
 dishelp() {
                 echo "**************************************************************************************"
                 echo "*                       SCRIPT TICKETS GLPI MANAGEMENT	                           *"
-                echo "*                      Create by Marcos Ricardo de Souza                             *"
+                echo "*                      Created by Marcos Ricardo de Souza                            *"
                 echo "**************************************************************************************"
                 echo
 		echo "Usage: $0 <PROBLEM|OK> <PARAMETERS>"
