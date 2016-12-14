@@ -32,6 +32,25 @@ Ex. OK:
 $ ./zabbix_glpi_ticket.sh "OK" "TRIGGER ID" "SOLUTION"
 ```
 
+### Configuração GLPI: 
+
+Habilite a API Rest no GLPI pelo caminho:
+
+```
+Configurar -> Geral -> API
+    * Habilitar API Rest: SIM
+    * Habilitar login com credenciais: SIM
+```
+Adicione um novo cliente de API, conforme necessario:
+
+```
+Configurar -> Geral -> API -> Adicionar cliente de API
+    * Nome: "Nome para o cliente"
+    * Ativo: SIM
+    * Registrar log de conexões: LOGS
+    * Filtrar acesso: (Deixe esses parâmetros vazios para desabilitar a restrição de acesso à API ou restrinja conforme necessario. Se regerado Token da aplicação, altere o script com o app_token gerado)
+```
+
 
 #### Referências:
 https://github.com/glpi-project/glpi/blob/master/apirest.md
