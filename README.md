@@ -48,9 +48,44 @@ Configurar -> Geral -> API -> Adicionar cliente de API
     * Nome: "Nome para o cliente"
     * Ativo: SIM
     * Registrar log de conexões: LOGS
-    * Filtrar acesso: (Deixe esses parâmetros vazios para desabilitar a restrição de acesso à API ou restrinja conforme necessario. Se regerado Token da aplicação, altere o script com o app_token gerado)
+    * Filtrar acesso: (Deixe esses parâmetros vazios para desabilitar a restrição
+                       de acesso à API ou restrinja conforme necessario. Se regerado 
+                       Token da aplicação, altere o script com o app_token gerado)
 ```
 
+### Configuração Zabbix: 
+
+Crie ações com as Condições necessarias e cofigure o Tipo de Operação Comando remoto:
+
+Ex: Abrir Chamado - Impressora
+
+```
+Condições: 
+     Valor da trigger = INCIDENTE
+     Grupo de hosts = Impressoras
+     
+Ações: 
+     Tipo da operação: Comando remoto
+     Destino: Host: Zabbix server
+     Tipo: Script personalizado
+     Executar em: Agent Zabbix
+     Comando: /etc/zabbix/scripts/zabbix_glpi_ticket.sh "{TRIGGER.STATUS}" "{TRIGGER.STATUS}: {TRIGGER.NAME} - {HOST.NAME}" "Equipamento: {HOST.NAME} \nAlerta: {TRIGGER.NAME} \nStatus: {TRIGGER.STATUS} \nSeveridade: {TRIGGER.SEVERITY} \n\nOriginal event ID: {EVENT.ID} \nTrigger.ID:{TRIGGER.ID} \n\n\nÚltimo Valor: \n{ITEM.LASTVALUE}" 143 "Printer" "{INVENTORY.TAG}"
+```
+
+Ex: Fechar Chamado - Impressora
+
+```
+Condições: 
+     Valor da trigger = OK
+     Grupo de hosts = Impressoras
+     
+Ações: 
+     Tipo da operação: Comando remoto
+     Destino: Host: Zabbix server
+     Tipo: Script personalizado
+     Executar em: Agent Zabbix
+     Comando: /etc/zabbix/scripts/zabbix_glpi_ticket.sh "{TRIGGER.STATUS}" "{TRIGGER.ID}" "Evento ({TRIGGER.NAME}) normalizado \nChamado fechado pelo Zabbix. \n\n\nÚltimo Valor: \n{ITEM.LASTVALUE}"
+```
 
 #### Referências:
 https://github.com/glpi-project/glpi/blob/master/apirest.md
