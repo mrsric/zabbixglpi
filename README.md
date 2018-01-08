@@ -2,7 +2,7 @@
 
 ### Objetivo: 
 
-Integrar Triggers do ZABBIX 2.2.4 com o GLPI 0.91.
+Integrar Triggers do ZABBIX 2.2.4 com o GLPI 9.1.6
 
  - Trigger de Status PROBLEM abrem chamados no GLPI
 
