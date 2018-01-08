@@ -1,7 +1,8 @@
 #!/bin/bash
 # GLPI - API REST (Integration with Trigger Zabbix)
 # By Marcos Ricardo de Souza
-# Emplasa 05/12/2016 version 1.0
+# 05/12/2016 version 1.0
+# 08/01/2018 version 1.1
 
 # Authentication
 username="glpi"
@@ -81,7 +82,7 @@ case "$typeEvent" in
 				-H "App_Token: f7g3csp8mgatg5ebc5elnazakw20i9fyev1qopya7" \
 				-d "$data" \
 				"$site_url/Ticket/"`
-				idTicket=`echo $ticket | cut -d':' -f2 | cut -d'}' -f1`
+				idTicket=`echo $ticket | cut -d':' -f2 | cut -d',' -f1`
 
 				# Associate Item
 				data='{"input": {"itemtype": "'$ticketItemType'", "items_id": '$ticketItemID', "tickets_id": '$idTicket'}}'
